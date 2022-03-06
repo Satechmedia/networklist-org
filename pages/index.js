@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
-import { withTheme, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { withTheme, createTheme, ThemeProvider } from '@material-ui/core/styles';
 import path from 'path'
 import {
   Grid,
@@ -26,7 +26,7 @@ import useSWR from 'swr'
 
 import classes from './index.module.css'
 
-const searchTheme = createMuiTheme({
+const searchTheme = createTheme({
   palette: {
     type: 'light',
     primary: {
@@ -124,7 +124,7 @@ function Home({ changeTheme, theme }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Chainlist</title>
+        <title>Satexpad Chainlist</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
@@ -132,7 +132,7 @@ function Home({ changeTheme, theme }) {
         <div className={ theme.palette.type === 'dark' ? classes.containerDark : classes.container }>
           <div className={ classes.copyContainer }>
             <div className={ classes.copyCentered }>
-              <Typography variant='h1' className={ classes.chainListSpacing }><span className={ classes.helpingUnderline }>Chainlist</span></Typography>
+              <Typography variant='h1' className={ classes.chainListSpacing }><span className={ classes.helpingUnderline }>Satexpad Chainlist</span></Typography>
               <Typography variant='h2' className={ classes.helpingParagraph }>Helping users connect to EVM powered networks</Typography>
               <Typography className={classes.subTitle}>Chainlist is a list of EVM networks. Users can use the information to connect their wallets and Web3 middleware providers to the appropriate Chain ID and Network ID to connect to the correct chain.</Typography>
               <Button
